@@ -4,6 +4,12 @@ dnd5e-shopinventory
 Shop Inventory/Pricing Generator for D&amp;D 5e
 
 
+Preview
+=======
+
+You can preview this project at https://ajman098.github.io/dnd5e-shopinventory/preview/shopgen.html
+
+
 Goals
 =====
 
