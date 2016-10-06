@@ -41,6 +41,6 @@ A: Open the subfolder called `js`, and edit one of the `data` files. Ask your lo
 CREDIT
 ======
 
-Any and all credit for the layout and code of this project goes to crobi. You can see the original 5e quickref here: https://github.com/crobi/dnd5e-quickref
+Any and all credit for the layout and code of this project goes to Robert Autenrieth. You can see the original 5e quickref here: https://github.com/crobi/dnd5e-quickref
 
 The concept and a lot of the legwork comes from Jacob Valdez's Shop Inventory Spreadsheet. You can see the original here: https://roleplayingtips.com/tools/excel-file-generates-shop-inventory-for-you/
