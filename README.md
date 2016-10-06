@@ -1,11 +1,29 @@
-dnd5e-quickref
-==============
+dnd5e-shopinventory
+===================
 
-Shop Inventory and Pricing Generator for D&amp;D 5e
+Shop Inventory/Pricing Generator for D&amp;D 5e
+
+
+Goals
+=====
+
+1. Set up each 'card' as a different category of item
+2. List under each category the available items with a price or "Out of Stock"
+3. Each price will have a "low", "average" or "high" marking based on its relation to average market price
+4. An ability for GM to generate and freeze prices as well as name the shop
+5. Update listings to include any 5E items, as source is 3.5
+
+
+Stretch Goals
+=============
+
+1. Add an icon for each item
+2. Add an onclick description for each item
+3. Generate a random "delivery time" for items that are out of stock
 
 
 Icons
-==============
+=====
 
 All icons are provided by http://game-icons.net/
 
