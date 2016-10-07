@@ -1,0 +1,28 @@
+<?php
+	$colorarray = [
+		"Maroon",
+		"Black",
+		"Indigo",
+		"DarkOliveGreen",
+		"FireBrick",
+		"ForestGreen",
+		"Navy",
+		"Chocolate",
+		"Maroon",
+		"Black",
+		"Indigo",
+		"DarkOliveGreen",
+		"FireBrick",
+		"ForestGreen",
+		"Navy",
+		"Chocolate",
+		"Maroon",
+		"Black",
+		"Indigo",
+		"DarkOliveGreen",
+		"FireBrick",
+		"ForestGreen",
+		"Navy",
+		"Chocolate",
+	];
+?>

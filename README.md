@@ -18,6 +18,7 @@ Goals
 3. Each price will have a "low", "average" or "high" marking based on its relation to average market price
 4. An ability for GM to generate and freeze prices as well as name the shop
 5. Update listings to include/reflect 5E items, as source is 3.5
+6. Humor
 
 
 Stretch Goals
@@ -25,7 +26,7 @@ Stretch Goals
 
 1. Add an icon for each item
 2. Add an onclick description for each item
-3. Generate a random "delivery time" for items that are out of stock
+3. Generate a random "delivery time" for items that are out of stock?
 
 
 Icons

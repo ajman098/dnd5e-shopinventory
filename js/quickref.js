@@ -60,12 +60,18 @@ function init() {
     fill_section(data_weapons, "basic-weapons", "Weapons");
     fill_section(data_armor, "basic-armor", "Armor");
     fill_section(data_magic, "basic-magic", "Magic Items");
-    fill_section(data_reaction, "basic-reactions", "Reaction");
-    fill_section(data_condition, "basic-conditions", "Condition");
-    fill_section(data_environment_obscurance, "environment-obscurance", "Environment");
-    fill_section(data_environment_light, "environment-light", "Environment");
-    fill_section(data_environment_vision, "environment-vision", "Environment");
-    fill_section(data_environment_cover, "environment-cover", "Environment");
+    fill_section(data_ammo, "basic-ammo", "Munitions");
+	fill_section(data_gear, "basic-gear", "Adventuring Gear");
+	fill_section(data_tools, "basic-tools", "Tool Kits");
+	fill_section(data_clothing, "basic-clothing", "Clothing");
+	fill_section(data_food, "basic-food", "Food & Drink");
+	fill_section(data_stuff, "basic-stuff", "Commodities");
+	fill_section(data_odds, "basic-odds", "Odds & Ends");
+	fill_section(data_music, "basic-music", "Instruments");
+	fill_section(data_pets, "basic-pets", "Pets");
+	fill_section(data_mounts, "basic-mounts", "Mounts");
+	fill_section(data_cars, "basic-cars", "Transport");
+	fill_section(data_dudes, "basic-dudes", "Services");
 
     var modal = document.getElementById("modal");
     modal.onclick = hide_modal;
