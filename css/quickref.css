@@ -118,27 +118,27 @@
 /* ------------------------------------------------------------------------- */
 /* Colors */
 /* ------------------------------------------------------------------------- */
-#section-movement, #section-movement .item-icon {
+#section-weapons, #section-weapons .item-icon {
     background-color: maroon;
     border-color: maroon;
 }
-#section-movement .text {
+#section-weapons .text {
     color: maroon;
 }
 
-#section-action, #section-action .item-icon {
+#section-armor, #section-armor .item-icon {
     background-color: black;
     border-color: black;
 }
-#section-action .text {
+#section-armor.text {
     color: black;
 }
 
-#section-bonus-action, #section-bonus-action .item-icon {
+#section-magic, #section-magic .item-icon {
     background-color: indigo;
     border-color: indigo;
 }
-#section-bonus-action .text {
+#section-magic .text {
     color: indigo;
 }
 

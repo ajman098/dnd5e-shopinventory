@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php require("connect.php"); ?>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -17,44 +18,42 @@
     <div class="page fontsize" data-size="fullscreen">
 
         <!-- Movement section -->
-        <div id="section-movement" class="section-container">
+        <div id="section-weapons" class="section-container">
             <div class="section-title">
-                Weapons <span class="float-right">Flavor Text</span>
+                Weapons <span class="float-right">Flavor Text?</span>
             </div>
             <div class="section-content">
                 <div class="section-row section-subtitle text fontsize">
                     Orcs raiding your village? Problems with rats in the cellar? Caught your husband cheating? We have everything you need to slice, stab and smash your way out of any problem.
                 </div>
-                <div class="section-row" id="basic-movement">
+                <div class="section-row" id="basic-weapons">
                 </div>
             </div>
         </div>
 
-        <!-- Action section -->
-        <div id="section-action" class="section-container">
+        <!-- Armor section -->
+        <div id="section-armor" class="section-container">
             <div class="section-title">
-                Action <span class="float-right">1/turn</span>
+                Armor <span class="float-right"><!--tagline--></span>
             </div>
             <div class="section-content">
                 <div class="section-row section-subtitle text fontsize">
-                    You can also interact with one object or feature of the
-                    environment for free.
+                    They say the best offense is a good defense. Whether that's true or not, wearing armor sure beats a sword to the guts.
                 </div>
-                <div class="section-row" id="basic-actions"></div>
+                <div class="section-row" id="basic-armor"></div>
             </div>
         </div>
 
-        <!-- Bonus action section -->
-        <div id="section-bonus-action" class="section-container">
+        <!-- Magic item section -->
+        <div id="section-magic" class="section-container">
             <div class="section-title">
-                Bonus action <span class="float-right">max. 1/turn</span>
+                Magic Items <span class="float-right"></span>
             </div>
             <div class="section-content">
                 <div class="section-row section-subtitle text fontsize">
-                    You can take a bonus action only when a special ability, spell, or feature
-                    states that you can do something as a bonus action.
+                    No refunds! Use of magic items may cause the following side effects: growing an extra appendage, gigantism, halitosis, mitosis, anal leakage, gout, death, immortality and dry eye.
                 </div>
-                <div class="section-row" id="basic-bonus-actions"></div>
+                <div class="section-row" id="basic-magic"></div>
             </div>
         </div>
 
@@ -136,29 +135,58 @@
     </div>
 
     <!-- Data -->
-    <!--<script type="text/javascript" src="js/data_movement.js" charset="utf-8"></script>-->
 	<?php
-		$movement = [
-			[
-				"title" => "Move",
-				"icon" => "run",
-				"subtitle" => "Cost: 5ft per 5ft",
-				"description" => "Movement cost: 5ft per 5ft moved",
-				"reference" => "PHB, pg. 190.",
-				"bullets" => ["Hello"],
-			],
-			[
-				"title" => "Climb",
-				"icon" => "crags",
-				"subtitle" => "Cost: 5ft per 5ft",
-				"description" => "Movement cost: 5ft per 5ft moved",
-				"reference" => "PHB, pg. 190.",
-				"bullets" => ["Hello"],
-			]
-		];
-		echo 'var data_movement = '.json_encode($movement).';';
+	
+		function Outofstock()
+		{
+			global $i, $stack;
+			if (!$i)
+			{
+				$push = [
+					"title" => "Out of Stock",
+					"icon" => "dead-head",
+					"subtitle" => "Oh noes!",
+					"description" => "Looks like we're out of stock in this category. Check back later!",
+					"reference" => "",
+					"bullets" => [""] 
+				];
+				array_push($stack, $push);
+			}
+		}
+		
+		function Fillcategory($category)
+		{
+			global $db, $i, $stack;
+			$stack = [];
+			$i = 0;
+			$stmt = $db->prepare("SELECT * FROM categories WHERE id='".$category."' LIMIT 1"); 
+			$stmt->execute(); 
+			$cat = $stmt->fetch();
+			foreach($db->query("SELECT * FROM shop WHERE cat='".$category."' AND stock>='0' ORDER BY icon DESC") as $row)
+			{
+				$push = [
+					"title" => $row['name'],
+					"icon" => $row['icon'],
+					"subtitle" => ($row['price']/100).'GP',
+					"description" => $row['brief'],
+					"reference" => "",
+					"bullets" => [$row["info"]] 
+				];
+				array_push($stack, $push);
+				$i++;
+			}
+			Outofstock();
+			echo '<script>var data_'.strtolower($cat['name']).' = '.json_encode($stack).';</script>';
+		}
+		$stack;
+		$i;
+		Fillcategory(0);
+		Fillcategory(1);
+		Fillcategory(2);
+		
 	?>
-    <script type="text/javascript" src="js/data_action.js" charset="utf-8"></script>
+    <!--<script type="text/javascript" src="js/data_movement.js" charset="utf-8"></script>-->
+	<!--<script type="text/javascript" src="js/data_action.js" charset="utf-8"></script>-->
     <script type="text/javascript" src="js/data_bonusaction.js" charset="utf-8"></script>
     <script type="text/javascript" src="js/data_reaction.js" charset="utf-8"></script>
     <script type="text/javascript" src="js/data_condition.js" charset="utf-8"></script>
