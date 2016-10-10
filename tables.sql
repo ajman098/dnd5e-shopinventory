@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.2
+-- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql.gorker.org
--- Generation Time: Oct 06, 2016 at 10:46 PM
+-- Generation Time: Oct 10, 2016 at 01:34 PM
 -- Server version: 5.6.25-log
 -- PHP Version: 7.0.9
 
@@ -38,13 +38,13 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `brief`, `info`) VALUES
-(0, 'weapons', 'Weapons', 'info'),
-(1, 'armor', 'Armor', ''),
-(2, 'magic', 'Magic Items', ''),
-(3, 'ammo', 'Consumables', ''),
-(4, 'gear', 'Adventuring Gear', ''),
-(5, 'tools', 'Tool Kits', ''),
-(6, 'clothing', 'Clothing', ''),
+(0, 'weapons', 'Weapons', 'Orcs raiding your village? Problems with rats in the cellar? Caught your husband cheating? We have everything you need to slice, stab and smash your way out of any problem.'),
+(1, 'armor', 'Armor', 'They say the best offense is a good defense. Whether that\'s true or not, wearing armor sure beats a sword to the guts.'),
+(2, 'magic', 'Magic Items', 'No refunds! Use of magic items may cause the following side effects: growing an extra appendage, gigantism, halitosis, mitosis, anal leakage, gout, death, immortality and dry eye.'),
+(3, 'ammo', 'Munitions', 'I know what you\'re thinking. \'Did he fire six shots or only five?\' Well to tell you the truth, in all this excitement, I kind of lost track myself. But being that this is a bow, I have a whole quiver full of arrows to shoot at you.'),
+(4, 'gear', 'Adventuring Gear', 'Don\'t be caught on the go without the things you need most! Our outfitters will help you find the right gear for the right task.'),
+(5, 'tools', 'Tool Kits', 'Attention rogues, due to the political climate around stealing, we have discontinued item 56224 better known as the \'Thieves Tool Kit.\' Please consider alternative kits such as item 56225 (Burglars Kit) or item 56226 (Lockpickers Kit).'),
+(6, 'clothing', 'Clothing', 'Fashion yourself a fashionista? We have everything from peasant garb to noble clothing.'),
 (7, 'food', 'Food & Drink', ''),
 (8, 'stuff', 'Commodities', ''),
 (9, 'odds', 'Odds & Ends', ''),
@@ -52,8 +52,7 @@ INSERT INTO `categories` (`id`, `name`, `brief`, `info`) VALUES
 (11, 'pets', 'Pets', ''),
 (12, 'mounts', 'Mounts', ''),
 (13, 'cars', 'Transport', ''),
-(14, 'dudes', 'Services', ''),
-(15, 'trinkets', 'Trinkets', '');
+(14, 'dudes', 'Services', '');
 
 -- --------------------------------------------------------
 
@@ -811,7 +810,7 @@ INSERT INTO `shop` (`id`, `name`, `rarity`, `cat`, `cost`, `brief`, `info`, `sto
 (731, 'Gerbil (pair)', 0, 11, 1, '', '', 0, 0, 'paw-heart'),
 (732, 'Guinea Pig', 0, 11, 1, '', '', 0, 0, 'paw-heart'),
 (733, 'Newts (6)', 0, 11, 1, '', '', 0, 0, 'paw-heart'),
-(734, 'Ox', 0, 11, 2000, '', '', 0, 0, 'paw-heart'),
+(734, 'Ox', 0, 12, 2000, '', '', 0, 0, 'donkey'),
 (735, 'Plant, common', 0, 11, 2, '', '', 0, 0, 'paw-heart'),
 (736, 'Rabbit', 0, 11, 1, '', '', 0, 0, 'paw-heart'),
 (737, 'Rats, common (pair)', 0, 11, 1, '', '', 0, 0, 'paw-heart'),
@@ -882,7 +881,7 @@ INSERT INTO `shop` (`id`, `name`, `rarity`, `cat`, `cost`, `brief`, `info`, `sto
 (801, 'Wagon, common', 1, 13, 75000, '', '', 0, 0, 'old-wagon'),
 (802, 'Cage Wagon, grand', 2, 13, 80000, '', '', 0, 0, 'old-wagon'),
 (803, 'Galley', 2, 13, 3000000, '', '', 0, 0, 'galleon'),
-(804, 'Llama', 2, 13, 1000, '', '', 0, 0, 'donkey'),
+(804, 'Llama', 2, 12, 1000, '', '', 0, 0, 'donkey'),
 (805, 'Longship', 2, 13, 1000000, '', '', 0, 0, 'galleon'),
 (806, 'Sideshow Cart', 2, 13, 65000, '', '', 0, 0, 'old-wagon'),
 (807, 'Caravan Wagon, fancy', 3, 13, 125000, '', '', 0, 0, 'old-wagon'),
@@ -906,7 +905,29 @@ INSERT INTO `shop` (`id`, `name`, `rarity`, `cat`, `cost`, `brief`, `info`, `sto
 (825, 'Nanny (/day), noble', 2, 14, 10, '', '', 0, 0, 'shrug'),
 (826, 'Stained Glass (sq ft)', 2, 14, 2000, '', '', 0, 0, 'shrug'),
 (827, 'Tutor (/day), noble', 2, 14, 30, '', '', 0, 0, 'shrug'),
-(828, 'Trinket Grab Bag', 4, 15, 50000, '', 'Want a cursed item? Take a chance and pull from our fabulous grab bag! Please note store is not liable for lost appendages.', 0, 0, 'swap-bag');
+(828, 'Trinket Grab Bag', 4, 2, 50000, '', 'Want a cursed item? Take a chance and pull from our fabulous grab bag! Please note store is not liable for lost appendages.', 0, 0, 'swap-bag');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `shopinfo`
+--
+
+CREATE TABLE `shopinfo` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `short` text NOT NULL,
+  `shopsize` int(11) NOT NULL,
+  `townsize` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `shopinfo`
+--
+
+INSERT INTO `shopinfo` (`id`, `name`, `city`, `short`, `shopsize`, `townsize`) VALUES
+(0, 'Brooks Brothers', 'Kellyrock', 'Feel free to peruse our inventory. If you have any questions, please direct them to the master. If you would like to sell any items, you are welcome to do so at the counter.', 4, 7);
 
 --
 -- Indexes for dumped tables
@@ -922,6 +943,12 @@ ALTER TABLE `categories`
 -- Indexes for table `shop`
 --
 ALTER TABLE `shop`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `shopinfo`
+--
+ALTER TABLE `shopinfo`
   ADD PRIMARY KEY (`id`);
 
 --

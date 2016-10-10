@@ -7,7 +7,7 @@ Shop Inventory/Pricing Generator for D&amp;D 5e
 Preview
 =======
 
-You can preview this project at http://rpg.gorker.org/shop/shopgen.php
+You can preview this project at http://rpg.gorker.org/shop/index.php
 
 
 Goals
@@ -42,7 +42,7 @@ FAQ
 A: Open an issue at https://github.com/ajman098/dnd5e-shopinventory/issues. Even better: fork the project, fix the problem, and post a pull request.
 
 #### Q: How do I edit the base items and prices? ####
-A: Currently the code points to a read-only database. You can instead edit the connect.php file and point it to your own database. All the current data is in the shop.sql file. Once that's imported to your sql database, you can edit the values using phpmyadmin.
+A: Currently the code points to a read-only database. You can instead edit the connect.php file and point it to your own database. All the current data is in the tables.sql file. Once that's imported to your sql database, you can edit the values using phpmyadmin.
 
 
 CREDIT
