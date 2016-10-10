@@ -60,14 +60,14 @@
 			<input type='text' name='shopdesc' value="Feel free to peruse our inventory. If you have any questions, please direct them to the master. If you would like to sell any items, you are welcome to do so at the counter." size='30'><br>		
 			<h2>Town Size</h2>
 			<select name="townsize">
-				<option value="4000">Thorp</option>
-				<option value="10000">Hamlet</option>
-				<option value="20000">Village</option>
-				<option value="80000">Small Town</option>
-				<option value="300000">Large Town</option>
-				<option value="1500000">Small City</option>
-				<option value="4000000">Large City</option>
-				<option value="10000000">Metropolis</option>
+				<option value="0">Thorp</option>
+				<option value="1">Hamlet</option>
+				<option value="2">Village</option>
+				<option value="3">Small Town</option>
+				<option value="4">Large Town</option>
+				<option value="5">Small City</option>
+				<option value="6">Large City</option>
+				<option value="7">Metropolis</option>
 			</select>
 			<h2>Shop Size</h2>
 			<select name="shopsize">
