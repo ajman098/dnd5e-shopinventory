@@ -5,10 +5,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name=viewport content="width=device-width, initial-scale=1">
-    <title>D&D 5e quick reference</title>
+    <title>D&D 5e Shop Inventory</title>
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/quickref.css">
 	<style>
+		#section-info, #section-info .item-icon {
+			background-color: black;
+			border-color: black;
+		}
+		#section-info .text {
+			color: black;
+		}
+		
+		
 		<?php
 			$j = 0;
 			foreach($db->query("SELECT * FROM categories ORDER BY id ASC") as $row)
@@ -35,6 +44,25 @@
 </head>
 <body class="page-background">
     <div class="page fontsize" data-size="fullscreen">
+		<?php
+		
+			$stmt = $db->prepare("SELECT * FROM shopinfo WHERE id='0' LIMIT 1"); 
+			$stmt->execute(); 
+			$shopinfo = $stmt->fetch();
+			
+		?>
+		
+		<!-- Shopinfo section -->
+			<div id="section-info" class="section-container">
+				<div class="section-title">
+					Welcome to <?php echo $shopinfo['name']; ?>! <span class="float-right"><?php echo $shopinfo['city']; ?></span>
+				</div>
+				<div class="section-content">
+					<div class="section-row section-subtitle text fontsize">
+						<?php echo $shopinfo['short']; ?>
+					</div>
+				</div>
+			</div>
 		
 		<?php
 			$catcount = 0;
