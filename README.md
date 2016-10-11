@@ -27,6 +27,7 @@ Stretch Goals
 1. Add an icon for each item
 2. Add an onclick description for each item
 3. Generate a random "delivery time" for items that are out of stock?
+4. Add property listings?
 
 
 Icons

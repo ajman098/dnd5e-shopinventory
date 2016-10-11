@@ -140,7 +140,7 @@
 			$stmt = $db->prepare("SELECT * FROM categories WHERE id='".$category."' LIMIT 1"); 
 			$stmt->execute(); 
 			$cat = $stmt->fetch();
-			foreach($db->query("SELECT * FROM shop WHERE cat='".$category."' AND stock>='1' ORDER BY icon DESC") as $row)
+			foreach($db->query("SELECT * FROM shop WHERE cat='".$category."' AND stock>='1' ORDER BY icon DESC, name ASC") as $row)
 			{
 				$push = [
 					"title" => $row['name'],

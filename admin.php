@@ -75,6 +75,7 @@
 				<option value="6">Small</option>
 				<option value="8">Medium</option>
 				<option value="10">Large</option>
+				<option value="12">Legendary</option>
 			</select>
 			<h2>Forbidden Categories</h2>
 			<table><tr>

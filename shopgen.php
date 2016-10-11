@@ -42,7 +42,7 @@
 		$sql = "UPDATE shop SET price='".$price."' WHERE id='".$row['id']."'";
 		$db->query($sql);
 		
-		if ($price > $gplimit[$_POST['townsize']])
+		if ($price > $gplimit[$_POST['townsize']] || $price <= 0)
 		{
 			$stock = 0;
 		}
