@@ -62,6 +62,6 @@
 		echo $row['cost'] . " (" . $price . ") ".$stock."<br>";
 	}
 	
-	//header("Location: ./index.php");
-	//exit();
+	header("Location: ./index.php");
+	exit();
 ?>
