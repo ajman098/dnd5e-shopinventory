@@ -59,7 +59,7 @@
 		$sql = "UPDATE shop SET stock='".$stock."' WHERE id='".$row['id']."'";
 		$db->query($sql);
 		
-		echo $row['cost'] . " (" . $price . ") ".$stock."<br>";
+		// echo $row['cost'] . " (" . $price . ") ".$stock."<br>";
 	}
 	
 	header("Location: ./index.php");
