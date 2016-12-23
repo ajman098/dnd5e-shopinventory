@@ -55,7 +55,7 @@
 		<!-- Shopinfo section -->
 			<div id="section-info" class="section-container">
 				<div class="section-title">
-					Welcome to <?php echo $shopinfo['name']; ?>! <span class="float-right"><?php echo $shopinfo['city']; ?></span>
+					Welcome to <?php echo $shopinfo['name']; ?>! <span class="float-right"></span>
 				</div>
 				<div class="section-content">
 					<div class="section-row section-subtitle text fontsize">
@@ -104,8 +104,6 @@
                     <div class="section-row text">
                         <div id="modal-bullets">
                         </div>
-                    </div>
-                    <div class="section-row text" id="modal-reference">
                     </div>
                 </div>
             </div>
